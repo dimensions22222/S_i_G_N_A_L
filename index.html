@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="See where your brand is visible in AI answers." />
+  <title>Signal — AI visibility, made visible</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="nav"><a class="wordmark" href="#top">signal<span>·</span></a><nav aria-label="Main navigation"><a href="#how">How it works</a><a href="#checker">Free checker</a></nav><a class="nav-cta" href="#checker">Check a brand <span>↗</span></a></header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow hero-in">AI SEARCH VISIBILITY / 01—26</p><h1 id="hero-title" class="hero-in">Your brand is<br>being answered<br><em>without you.</em></h1><p class="lede hero-in">See whether ChatGPT, Perplexity and Gemini mention your brand when buyers ask the questions that matter.</p><a class="arrow-link hero-in" href="#checker">Run a free visibility check <b>↓</b></a></div>
+      <div class="sweep-wrap" aria-hidden="true"><div id="hero-sweep" class="three-sweep"></div><div class="sweep-fallback"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="orbit-label one">QUERY FIELD</span><span class="orbit-label two">42 SIGNALS</span></div>
+      <p class="hero-index mono">SCROLL TO DETECT <span>↓</span></p>
+    </section>
+
+    <section class="statement ruled reveal" aria-labelledby="statement-title"><p class="section-no mono">01 / THE SHIFT</p><div><h2 id="statement-title">Search has moved<br>from links to <em>answers.</em></h2><p>Millions of buying decisions now start inside a generated response. Traditional rankings cannot tell you if you are in that response. Signal can.</p></div></section>
+
+    <section id="how" class="process" aria-labelledby="process-title"><div class="process-intro"><p class="section-no mono">02 / THE METHOD</p><h2 id="process-title">Find the questions.<br>Scan the <em>answers.</em></h2></div><div class="process-steps">
+      <article><span class="step-no mono">01</span><h3>Choose a market</h3><p>Start with the category and questions your customers already ask.</p></article>
+      <article><span class="step-no mono">02</span><h3>Read the models</h3><p>We ask the leading answer engines the way a real buyer would.</p></article>
+      <article><span class="step-no mono">03</span><h3>See your signal</h3><p>Know where you appear, what surrounds your name, and where you are absent.</p></article>
+    </div><div class="scan-line" aria-hidden="true"><span></span></div></section>
+
+    <section id="checker" class="checker ruled" aria-labelledby="checker-title"><div class="checker-heading"><p class="section-no mono">03 / LIVE CHECK</p><h2 id="checker-title">Are you in the<br><em>answer?</em></h2><p>One free visibility check. No account required.</p></div><div class="checker-tool">
+      <form id="check-form"><label>YOUR BRAND<input id="brand" name="brand" placeholder="e.g. Notion" required maxlength="70" autocomplete="organization"></label><label>THE TOPIC<input id="topic" name="topic" placeholder="e.g. project management software" required maxlength="120"></label><button type="submit">Scan AI answers <span>→</span></button></form>
+      <div class="check-visual" id="tool-sweep" aria-hidden="true"><div class="radar-ring ring-a"></div><div class="radar-ring ring-b"></div><div class="radar-dot dot-a"></div><div class="radar-dot dot-b"></div><div class="radar-dot dot-c"></div><div class="scanner"></div><p class="mono">READY / 03 MODELS</p></div>
+      <div id="result" class="result" aria-live="polite" hidden></div>
+      <p class="fine mono">DEMO MODE · CONNECT A SECURE API ENDPOINT TO QUERY LIVE MODELS</p>
+    </div></section>
+
+    <section class="models reveal"><p class="section-no mono">SIGNAL IS READING</p><div><span>CHATGPT</span><span>PERPLEXITY</span><span>GEMINI</span></div><p>One clear view of how your market appears across answer engines.</p></section>
+
+    <section class="closing"><p class="eyebrow">THE ANSWER ECONOMY IS ALREADY HERE</p><h2>Be part of<br>the <em>answer.</em></h2><a class="arrow-link" href="#checker">Check your signal <b>↗</b></a></section>
+  </main>
+  <footer><a class="wordmark" href="#top">signal<span>·</span></a><p class="mono">AI VISIBILITY INTELLIGENCE © 2026</p><a href="mailto:hello@signal.example">hello@signal.example</a></footer>
+  <button id="sound-toggle" class="sound-toggle" type="button" aria-label="Turn ambient sound on" aria-pressed="false"><span class="sound-off">⌁</span><span class="sound-on">))</span></button><audio id="ambient" loop preload="none"></audio>
+</body>
+</html>
