@@ -13,8 +13,10 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script defer src="app.js"></script>
+  <link rel="stylesheet" href="theme.css" />
 </head>
 <body>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">◐</span><span class="theme-label">Dark</span></button>
   <header class="nav"><a class="wordmark" href="#top">signal<span>·</span></a><nav aria-label="Main navigation"><a href="#how">How it works</a><a href="#checker">Free checker</a></nav><a class="nav-cta" href="#checker">Check a brand <span>↗</span></a></header>
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
@@ -41,6 +43,14 @@
     <section class="models reveal"><p class="section-no mono">SIGNAL IS READING</p><div><span>CHATGPT</span><span>PERPLEXITY</span><span>GEMINI</span></div><p>One clear view of how your market appears across answer engines.</p></section>
 
     <section class="closing"><p class="eyebrow">THE ANSWER ECONOMY IS ALREADY HERE</p><h2>Be part of<br>the <em>answer.</em></h2><a class="arrow-link" href="#checker">Check your signal <b>↗</b></a></section>
+    <section class="signal-gallery ruled" aria-labelledby="gallery-title">
+      <div class="gallery-intro"><p class="section-no mono">04 / IN THE WILD</p><h2 id="gallery-title">Every answer starts<br>with a <em>moment.</em></h2><p>Make sure your brand appears when curiosity turns into intent.</p></div>
+      <div class="gallery-grid">
+        <figure class="gallery-card large"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85" alt="Person working on a laptop" loading="lazy"><figcaption class="mono">01 / RESEARCH</figcaption></figure>
+        <figure class="gallery-card"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85" alt="Team discussing ideas around a table" loading="lazy"><figcaption class="mono">02 / CONSIDERATION</figcaption></figure>
+        <figure class="gallery-card"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=85" alt="Creative team collaborating in an office" loading="lazy"><figcaption class="mono">03 / DECISION</figcaption></figure>
+      </div>
+    </section>
   </main>
   <footer><a class="wordmark" href="#top">signal<span>·</span></a><p class="mono">AI VISIBILITY INTELLIGENCE © 2026</p><a href="mailto:hello@signal.example">hello@signal.example</a></footer>
   <button id="sound-toggle" class="sound-toggle" type="button" aria-label="Turn ambient sound on" aria-pressed="false"><span class="sound-off">⌁</span><span class="sound-on">))</span></button><audio id="ambient" loop preload="none"></audio>

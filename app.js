@@ -20,4 +20,22 @@ function initMotion(){if(!window.gsap||prefersReduced)return; gsap.from('.hero-i
 function demoResult(brand,topic){const hash=[...(`${brand}${topic}`)].reduce((a,c)=>a+c.charCodeAt(0),0);const mentioned=hash%3!==0;return {mentioned,model:['ChatGPT','Perplexity','Gemini'][hash%3],excerpt:mentioned?`${brand} appears as a relevant option in responses about ${topic}.`:`${brand} was not surfaced in a representative answer about ${topic}.`}}
 async function runCheck(e){e.preventDefault();const brand=document.getElementById('brand').value.trim(),topic=document.getElementById('topic').value.trim(),visual=document.querySelector('.check-visual'),result=document.getElementById('result'),button=e.currentTarget.querySelector('button');button.disabled=true;button.firstChild.textContent='Scanning answers ';visual.classList.add('scanning');result.hidden=true;let data;try{if(API_ENDPOINT){const r=await fetch(API_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({brand,topic})});if(!r.ok)throw Error();data=await r.json()}else{await new Promise(r=>setTimeout(r,1900));data=demoResult(brand,topic)}}catch{data={mentioned:false,model:'Model unavailable',excerpt:'We could not complete this check. Please try again.'}}visual.classList.remove('scanning');result.className='result '+(data.mentioned?'':'not-detected');result.innerHTML=`<span class="mono">${data.mentioned?'MENTION DETECTED':'NOT DETECTED'} / ${data.model.toUpperCase()}</span><strong>${data.mentioned?'Your signal is present.':'Your signal is missing.'}</strong><p>${data.excerpt}</p>`;result.hidden=false;button.disabled=false;button.firstChild.textContent='Scan AI answers ';result.scrollIntoView({block:'nearest',behavior:'smooth'})}
 function initSound(){const btn=document.getElementById('sound-toggle');let ctx,gain,source;function start(){ctx=new (window.AudioContext||window.webkitAudioContext)();gain=ctx.createGain();gain.gain.value=0;const buffer=ctx.createBuffer(1,ctx.sampleRate*2,ctx.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<data.length;i++)data[i]=(Math.random()*2-1)*.13;source=ctx.createBufferSource();source.buffer=buffer;source.loop=true;const filter=ctx.createBiquadFilter();filter.type='lowpass';filter.frequency.value=260;source.connect(filter).connect(gain).connect(ctx.destination);source.start();gain.gain.linearRampToValueAtTime(.045,ctx.currentTime+.8)}function stop(){if(!ctx)return;gain.gain.linearRampToValueAtTime(0,ctx.currentTime+.8);setTimeout(()=>{source.stop();ctx.close();ctx=null},850)}btn.addEventListener('click',()=>{const on=!btn.classList.contains('playing');if(on){start();btn.classList.add('playing');btn.setAttribute('aria-label','Turn ambient sound off');btn.setAttribute('aria-pressed','true')}else{stop();btn.classList.remove('playing');btn.setAttribute('aria-label','Turn ambient sound on');btn.setAttribute('aria-pressed','false')}localStorage.setItem('signal-sound',on?'on':'off')})}
-document.addEventListener('DOMContentLoaded',()=>{initSweep();initMotion();initSound();document.getElementById('check-form').addEventListener('submit',runCheck)});
+function initTheme(){
+  const btn=document.getElementById('theme-toggle');
+  const saved=localStorage.getItem('signal-theme');
+  const systemDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+  function setTheme(theme){
+    const dark=theme==='dark';
+    document.documentElement.dataset.theme=theme;
+    btn.setAttribute('aria-pressed',String(dark));
+    btn.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
+    btn.querySelector('.theme-label').textContent=dark?'Light':'Dark';
+  }
+  setTheme(saved || (systemDark?'dark':'light'));
+  btn.addEventListener('click',()=>{
+    const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+    setTheme(next);
+    localStorage.setItem('signal-theme',next);
+  });
+}
+document.addEventListener('DOMContentLoaded',()=>{initTheme();initSweep();initMotion();initSound();document.getElementById('check-form').addEventListener('submit',runCheck)});
