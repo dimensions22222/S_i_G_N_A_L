@@ -1,0 +1,27 @@
+/* Shared responsive refinements for the landing, auth, and product pages. */
+html{overflow-x:hidden}img{max-width:100%}
+@media (max-width:1100px){
+  .hero{padding-inline:clamp(28px,5vw,70px)}.statement,.process,.checker,.models,.signal-gallery{padding-inline:clamp(28px,5vw,70px)}
+  .landing-hero{padding-inline:clamp(28px,5vw,70px);grid-template-columns:minmax(300px,.9fr) minmax(360px,1.1fr)}
+  .signal-stage{width:min(55vw,650px);height:min(61vw,580px)}.auth-shell{width:min(920px,calc(100% - 48px));gap:clamp(40px,7vw,85px)}
+}
+@media (max-width:860px){
+  .nav{padding-inline:28px}.nav nav{display:none}.nav-cta{font-size:13px!important}
+  .theme-toggle{right:140px}.hero{grid-template-columns:minmax(0,1fr) minmax(280px,.82fr);padding-top:130px}.hero h1{font-size:clamp(46px,7.6vw,66px)}
+  .hero-visual{width:min(52vw,500px)}.statement,.landing-band{grid-template-columns:27% 1fr}.process-intro{display:block}.process-intro h2{margin-top:30px}.process-steps{margin-top:72px}
+  .checker{grid-template-columns:minmax(210px,.8fr) minmax(0,1.2fr);gap:42px}.models{grid-template-columns:27% 1fr}
+  .landing-hero{grid-template-columns:minmax(280px,.85fr) minmax(300px,1fr);gap:30px;padding-top:120px}.landing-hero h1{font-size:clamp(48px,7.1vw,68px)}.signal-stage{width:100%;height:500px}.stage-card{padding:16px 13px}
+  .auth-shell{grid-template-columns:minmax(250px,.85fr) minmax(340px,1fr);gap:42px}.auth-intro h1{font-size:clamp(44px,6vw,60px)}
+}
+@media (max-width:640px){
+  body{font-size:15px}.nav{height:68px;padding-inline:18px}.wordmark{font-size:23px}.nav-cta{font-size:11px!important}.theme-toggle{top:15px;right:104px;min-width:68px;height:34px;padding-inline:8px}.theme-label{font-size:9px}
+  .hero{min-height:auto;padding:124px 18px 76px}.hero h1{font-size:clamp(45px,14vw,59px);line-height:.91}.hero .lede{max-width:330px;margin:25px 0;font-size:16px}.hero-index{display:none}.hero-visual{width:calc(100% + 4px);margin:54px -2px 0;aspect-ratio:1/1.05}.hero-visual-caption{max-width:160px}.hero-visual-controls{left:10px;right:10px;justify-content:flex-start}.hero-mode{font-size:9px}
+  .statement,.checker,.process,.models,.signal-gallery{padding:82px 18px}.statement,.checker,.models{display:block}.section-no{margin-bottom:28px}.statement p:not(.section-no){font-size:16px}.process{min-height:auto}.process h2,.checker h2{font-size:clamp(40px,12vw,57px)}.process-steps{margin-top:52px}.process article{padding:22px 0}.checker-heading{margin-bottom:48px}.checker-heading>p:last-child{margin-top:20px}.check-visual{height:205px}.models div{gap:12px}.models div span{font-size:clamp(25px,9vw,38px)}
+  .landing-nav .nav-cta{display:block}.landing-hero{display:block;padding:118px 18px 65px}.landing-hero h1{font-size:clamp(48px,14vw,62px)}.landing-lede{font-size:16px;margin:25px 0}.signal-stage{width:calc(100% + 4px);height:clamp(330px,108vw,430px);margin:50px -2px 0}.stage-card{padding:13px 11px}.stage-card strong{font-size:clamp(35px,12vw,58px)}.stage-card span,.stage-card small,.stage-label{font-size:8px}.landing-band{padding:82px 18px}.landing-band h2,.landing-cta h2{font-size:clamp(45px,13vw,65px)}.landing-features{padding:0 18px 64px}.landing-cta{padding:100px 18px}.landing-cta h2{font-size:clamp(58px,16vw,78px)}
+  .auth-page{padding-top:98px}.auth-nav{height:64px;padding-inline:18px}.auth-shell{width:calc(100% - 28px)}.auth-card{padding:22px 18px}.auth-copy h2{font-size:39px}.auth-card input{font-size:16px}.auth-card .auth-submit{height:52px}.auth-terms{line-height:1.5}.auth-glow{filter:blur(55px)}
+  footer{padding:24px 18px}.sound-toggle{right:14px;bottom:14px}
+}
+@media (max-width:380px){
+  .theme-label{display:none}.theme-toggle{right:87px;min-width:36px}.nav-cta{font-size:10px!important}.hero,.landing-hero{padding-inline:15px}.statement,.checker,.process,.models,.signal-gallery,.landing-band{padding-inline:15px}.landing-features{padding-inline:15px}.auth-shell{width:calc(100% - 22px)}.auth-card{padding-inline:16px}.auth-copy h2{font-size:35px}
+}
+@media (hover:none){.hero-enter:hover{transform:none}.signal-stage:hover{transform:none}.gallery-card:hover img{transform:none}.theme-toggle{min-height:40px}.auth-close{min-width:36px;min-height:36px}}
